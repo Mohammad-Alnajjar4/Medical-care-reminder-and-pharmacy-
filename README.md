@@ -1,5 +1,5 @@
 # MedLinka
-
+![MedLinka](https://github.com/krkralkair007/Medical-care-reminder-and-pharmacy-/blob/d4e2e51c626b5976bcb5b43450dc82f58533f861/MEDLINKA%20PIC%20INFO.jpg)
 
 ## Team Details
 

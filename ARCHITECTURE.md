@@ -274,62 +274,7 @@ The current environment is containerized using Docker Compose for seamless local
 ### 8.2 System Architecture Diagram
 
 > Shows how all physical nodes, containers, and external services connect to each other.
-
-```
-+-------------------------------------------------------+
-|                     USER DEVICES                      |
-|                                                       |
-|  +---------------------+   +----------------------+  |
-|  |   Mobile App        |   |   Web Dashboard      |  |
-|  |  (React Native/Expo)|   |  (React + Vite)      |  |
-|  |  iOS / Android      |   |  Doctor / Pharmacy   |  |
-|  +----------+----------+   +-----------+----------+  |
-|             |                          |              |
-+-------------|--------------------------|---------------+
-              |     HTTP / REST          |
-              |    /api/v1/...           |
-              v                          v
-+-------------------------------------------------------+
-|              DOCKER COMPOSE ENVIRONMENT               |
-|                                                       |
-|  +---------------------------------------------+     |
-|  |         backend container                   |     |
-|  |         Python 3.11 + FastAPI + Uvicorn     |     |
-|  |         PORT: 8000                          |     |
-|  |                                             |     |
-|  |  +------------+  +------------+             |     |
-|  |  | auth router|  | ai router  |             |     |
-|  |  +------------+  +------+-----+             |     |
-|  |  +------------+  +------+-----+             |     |
-|  |  | appt router|  |pharmacy    |             |     |
-|  |  +------------+  |router      |             |     |
-|  |  +---------------------------++             |     |
-|  |  | reminders router (BG task) |             |     |
-|  |  +----------------------------+             |     |
-|  +--------------------+------------------------+     |
-|                       |                              |
-|                       | SQL Queries                  |
-|                       v                              |
-|  +---------------------------------------------+     |
-|  |         database (SQLite volume)            |     |
-|  |         database.db (mounted)               |     |
-|  |                                             |     |
-|  |   [users] [doctors] [patients]              |     |
-|  |   [appointments] [orders]                   |     |
-|  |   [medicines] [reminders]                   |     |
-|  +---------------------------------------------+     |
-|                                                       |
-+-------------------------------------------------------+
-              |
-              | HTTPS (outbound)
-              v
-+---------------------------+
-|      Gemini API           |
-|   (Google Cloud)          |
-|   Multilingual AI         |
-|   Symptom Processing      |
-+---------------------------+
-```
+![](https://github.com/krkralkair007/Medical-care-reminder-and-pharmacy-/blob/546fa83adfe9b2a32df9d34d18a3e49fb0a86ed2/8.2%20System%20Architecture%20Diagram.jpg)
 
 ### 8.3 API Endpoints Map
 

@@ -197,18 +197,7 @@ MedLinka utilizes Python's asynchronous ecosystem (ASGI/Uvicorn) to handle high 
 
 **Flow C — Doctor Booking**
 
-```
-  Mobile App                  FastAPI Server               SQLite DB
-      |                            |                            |
-      |-- GET /api/v1/doctors ---->|                            |
-      |<-- List of doctors --------|-- SELECT * FROM doctors -->|
-      |                            |                            |
-      |-- POST /api/v1/appointments|                            |
-      |   (doctor_id, date)        |-- Validate doctor exists ->|
-      |                            |-- Validate patient exists->|
-      |                            |-- INSERT appointment ----->|
-      |<-- 201 Appointment booked--|                            |
-```
+![](https://github.com/krkralkair007/Medical-care-reminder-and-pharmacy-/blob/f5da9263195b1ddb7b6368b3b69b8545d0974795/Flow%20C%20%E2%80%94%20Doctor%20Booking.jpg)
 
 ---
 

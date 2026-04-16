@@ -135,49 +135,7 @@ The logical view describes the object-oriented decomposition of MedLinka, organi
 
 ### 5.3 Database Schema Diagram (ERD)
 
-> Shows all core entities, their fields, and how they relate to each other.
-
-```
-+------------------+         +---------------------+         +------------------+
-|      doctors     |         |    appointments     |         |     patients     |
-+------------------+         +---------------------+         +------------------+
-| PK  id (INT)     |<--------| FK  doctor_id (INT) |-------->| PK  id (INT)     |
-|     name (TEXT)  |         | FK  patient_id(INT) |         |     name (TEXT)  |
-|     specialty    |         | PK  id (INT)        |         |     age (INT)    |
-+------------------+         |     appointment_date|         +------------------+
-                             |     status (TEXT)   |
-                             |     (default:pending)|
-                             +---------------------+
-
-+------------------+         +---------------------+         +---------------------+
-|      users       |         |   triage_sessions   |         |     ai_advice       |
-+------------------+         +---------------------+         +---------------------+
-| PK  id (INT)     |<--------| FK  user_id (INT)   |-------->| FK  session_id(INT) |
-|     name (TEXT)  |         | PK  id (INT)        |         | PK  id (INT)        |
-|     role (TEXT)  |         |     created_at      |         |     gemini_output   |
-|     language     |         +---------------------+         |     disclaimer      |
-+------------------+                                         +---------------------+
-
-+------------------+         +---------------------+         +---------------------+
-|    medicines     |         |       orders        |         |   order_items       |
-+------------------+         +---------------------+         +---------------------+
-| PK  id (INT)     |         | PK  id (INT)        |<--------| FK  order_id (INT)  |
-|     name (TEXT)  |         | FK  patient_id(INT) |         | FK  medicine_id(INT)|
-|     dosage(TEXT) |         |     status (TEXT)   |         | PK  id (INT)        |
-|     stock (INT)  |         +---------------------+         |     dosage_instr.   |
-+------------------+                                         +---------------------+
-         ^                                                            |
-         |                                                            v
-         |                                         +---------------------+
-         +-------[FK medicine_id]------------------| reminder_schedules  |
-                                                   +---------------------+
-                                                   | PK  id (INT)        |
-                                                   | FK  order_item_id   |
-                                                   |     remind_at (TEXT)|
-                                                   +---------------------+
-```
-
----
+![](https://github.com/krkralkair007/Medical-care-reminder-and-pharmacy-/blob/5239a865e9cbbbe74143dfa0e82cac73404a6523/5.3%20Database%20Schema%20Diagram%20(ERD)%20.jpg)
 
 ## 6. Process View
 
